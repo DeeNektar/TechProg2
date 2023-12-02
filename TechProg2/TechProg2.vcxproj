@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Aeroflot.cpp" />
     <ClCompile Include="TechProg2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Aeroflot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
