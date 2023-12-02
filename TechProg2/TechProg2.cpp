@@ -30,14 +30,14 @@ void MenuMain() {
 
 void MenuAeroflotPrint() {
 
-	std::cout << "//////Commands//////////////////////////\n";
-	std::cout << "//////1 - Add Element///////////////////\n";
-	std::cout << "//////2 - Delete Element////////////////\n";
-	std::cout << "//////3 - Change Element////////////////\n";
-	std::cout << "//////4 - Display All///////////////////\n";
-	std::cout << "//////5 - Display By Name Destination///\n";
-	std::cout << "//////0 - Exit//////////////////////////\n";
-	std::cout << "//////Your choice: ";
+	std::cout << "Commands\n";
+	std::cout << "-1- - Add Element\n";
+	std::cout << "-2- - Delete Element\n";
+	std::cout << "-3- - Change Element\n";
+	std::cout << "-4- - Display All\n";
+	std::cout << "-5- - Display By Name Destination\n";
+	std::cout << "-0- - Exit\n";
+	std::cout << "Your choice: ";
 	std::cin >> action;
 }
 
