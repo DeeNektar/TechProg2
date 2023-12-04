@@ -137,7 +137,6 @@ public:
 
         for (int i = 1;i < getCount() + 1;++i) {
             for (int j = 1;j < getCount();++j) {
-
                 if (((*this)[j].getNameDestination()) > ((*this)[j + 1].getNameDestination())) {
 
                     std::swap((*this)[j], (*this)[j + 1]);
