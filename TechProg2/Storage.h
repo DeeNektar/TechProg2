@@ -146,25 +146,25 @@ public:
         }
     }
 
-    void displayByNameDestination() {
+    void displayByTypeAerocraft() {
         try {
             if (getCount() == 0) throw std::exception("Storage is empty\n");
 
             std::string name = "";
-            std::cout << "Required name destination: ";
+            std::cout << "Required Type Aerocraft: ";
             while (!(std::cin >> name)) {
-                std::cout << "Trouble maaaann. name: ";
+                std::cout << "Trouble maaaann. Type Aerocraft: ";
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits <std::streamsize>::max(), '\n');
                 if (std::cin >> name)
                     break;
             }
 
-            std::cout << "\nElements with name destination = " << name << " :" << std::endl;
+            std::cout << "\nElements with Type Aerocraft = " << name << " :" << std::endl;
 
             int num = 0;
             for (int i = 1;i < getCount() + 1;i++) {
-                if ((*this)[i].getNameDestination() == name) {
+                if ((*this)[i].getTypeAerocraft() == name) {
                     std::cout << "-------Element " << num << "-------" << std::endl;
                     (*this)[i].getData();
                     num++;
