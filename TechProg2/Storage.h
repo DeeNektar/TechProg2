@@ -171,10 +171,10 @@ public:
                 }
             }
             if (num != 0)
-                std::cout << "\nCount of Elements with name destination = " << name << " :   " << num << std::endl << std::endl;
+                std::cout << "\nCount of Elements with Type Aerocraft = " << name << " :   " << num << std::endl << std::endl;
 
             else
-                std::cout << "\nNo Elements with name destination = " << name << std::endl << std::endl;
+                std::cout << "\nNo Elements with Type Aerocraft = " << name << std::endl << std::endl;
 
         }
         catch (const std::exception& ex) {

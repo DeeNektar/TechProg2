@@ -17,7 +17,7 @@ void Aeroflot::setData() {
 	std::cin >> this->nameDestination;
 	std::cout << '\n';
 
-	std::cout << "number: ";
+	std::cout << "numberFlight: ";
 	while (!(std::cin >> this->numberFlight)) {
 		std::cout << "Trouble maaaann. Enter a number >0.\n";
 		std::cin.clear();
@@ -29,7 +29,7 @@ void Aeroflot::setData() {
 		this->numberFlight = 0;
 	std::cout << '\n';
 
-	std::cout << "timeDeparture: ";
+	std::cout << "typeAerocraft: ";
 	std::cin >> this->typeAerocraft;
 	std::cout << '\n';
 }

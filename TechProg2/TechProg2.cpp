@@ -122,7 +122,7 @@ void MenuAeroflot() {
 		case 5:
 			system("cls");
 
-			store->displayByNameDestination();
+			store->displayByTypeAerocraft();
 
 			system("pause");
 			system("cls");
