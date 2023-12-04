@@ -34,7 +34,6 @@ void Aeroflot::setData() {
 	std::cout << '\n';
 }
 
-
 void Aeroflot::getData() {
 	std::cout << "Aeroflot\n";
 	std::cout << "nameDestination: " << nameDestination << '\n';
