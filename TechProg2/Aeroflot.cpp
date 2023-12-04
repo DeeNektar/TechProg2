@@ -8,7 +8,7 @@ Aeroflot::Aeroflot() {
 }
 
 Aeroflot::~Aeroflot(){
-	std::cout << "Destructor AF\n";
+	//std::cout << "Destructor AF\n";
 }
 
 void Aeroflot::setData() {
@@ -41,4 +41,3 @@ void Aeroflot::getData() {
 	std::cout << "number\t       : " << numberFlight << '\n';
 	std::cout << "typeAerocraft  : " << typeAerocraft << '\n';
 }
-

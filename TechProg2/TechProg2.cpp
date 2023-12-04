@@ -16,8 +16,11 @@
 сообщение*/
 
 #include <iostream>
+#include "Aeroflot.h"
+#include "Storage.h"
 int actionMain;
 int action;
+int val;
 void MenuMain() {
 
 	std::cout << "Commands\n";
@@ -41,6 +44,102 @@ void MenuAeroflotPrint() {
 	std::cin >> action;
 }
 
+void MenuAeroflot() {
+
+	Storage* store = new Storage;
+	Aeroflot* aeroflot;
+	action = 1;
+
+	while (action != 0) {
+		MenuAeroflotPrint();
+		switch (action) {
+		case 0:
+			break;
+		case 1:
+			system("cls");
+
+			aeroflot = new Aeroflot;
+			aeroflot->setData();
+			store->addElement(aeroflot);
+			store->sortTimeDeparture();
+
+			system("pause");
+			system("cls");
+			break;
+		case 2:
+			system("cls");
+
+			try {
+				if (store->getCount() == 0) throw std::exception("Storage is empty\n");
+				val = 0;
+				std::cout << "If you want to delete last Element(enter -> " << store->getCount() << ")\n";
+
+				std::cout << "Index of Elemnt to delete: ";
+				std::cin >> val;
+
+				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
+				if (store->getCount() < val)  throw std::exception("This Element doesn't exist\n");
+				(*(store))[val].getData();
+				store->deleteElement(val);
+			}
+			catch (const std::exception& ex) {
+				std::cout << ex.what() << '\n';
+			}
+
+			system("pause");
+			system("cls");
+			break;
+
+		case 3:
+			system("cls");
+
+			try {
+				if (store->getCount() == 0) throw std::exception("Storage is empty\n");
+				val = 0;
+				std::cout << "Index of Elemnt to edit: ";
+				std::cin >> val;
+
+				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
+				if (store->getCount() < val)  throw std::exception("This Element doesn't exist\n");
+				(*(store))[val].getData();
+				store->editElement(val);
+			}
+			catch (const std::exception& ex) {
+				std::cout << ex.what() << '\n';
+			}
+
+			system("pause");
+			system("cls");
+			break;
+		case 4:
+			system("cls");
+
+			store->displayKeep();
+
+			system("pause");
+			system("cls");
+			break;
+		case 5:
+			system("cls");
+
+			store->displayByNameDestination();
+
+			system("pause");
+			system("cls");
+			break;
+		default:
+			system("cls");
+
+			std::cout << "ERROR\n";
+
+			system("pause");
+			system("cls");
+			break;
+		}
+	}
+	delete store;
+}
+
 int main()
 {
 	actionMain = 1;
@@ -52,7 +151,7 @@ int main()
 		case 1:
 			system("cls");
 
-			//MenuAeroflot();
+			MenuAeroflot();
 
 			system("pause");
 			system("cls");
