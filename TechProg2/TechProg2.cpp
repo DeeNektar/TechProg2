@@ -38,7 +38,7 @@ void MenuAeroflotPrint() {
 	std::cout << "-2- - Delete Element\n";
 	std::cout << "-3- - Change Element\n";
 	std::cout << "-4- - Display All\n";
-	std::cout << "-5- - Display By Name Destination\n";
+	std::cout << "-5- - Display By Type Aerocraft\n";
 	std::cout << "-0- - Exit\n";
 	std::cout << "Your choice: ";
 	std::cin >> action;
