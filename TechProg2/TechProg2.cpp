@@ -18,6 +18,8 @@
 #include <iostream>
 #include "Aeroflot.h"
 #include "Storage.h"
+#include "Potoki.h"
+
 int actionMain;
 int action;
 int val;
@@ -159,7 +161,7 @@ int main()
 		case 2:
 			system("cls");
 
-			//quote();
+			threeSentence();
 
 			system("pause");
 			system("cls");
