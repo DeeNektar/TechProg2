@@ -39,7 +39,7 @@ private:
     Element* help;
 
 public:
-    Storage() {
+    Keeper() {
 
         //std::cout << "Constuctor Storage\n";
 
@@ -49,7 +49,7 @@ public:
     }
 
 
-    ~Storage() {
+    ~Keeper() {
 
         // std::cout << "Destructor Storage\n";
 

@@ -115,6 +115,7 @@ void MenuAeroflot() {
 			break;
 		case 4:
 			system("cls");
+			k->sortTimeDeparture();
 
 			k->displayKeep();
 
@@ -123,7 +124,7 @@ void MenuAeroflot() {
 			break;
 		case 5:
 			system("cls");
-
+			
 			k->displayByTypeAerocraft();
 
 			system("pause");
