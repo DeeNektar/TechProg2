@@ -19,7 +19,7 @@ void Aeroflot::setData() {
 
 	std::cout << "numberFlight: ";
 	while (!(std::cin >> this->numberFlight)) {
-		std::cout << "Trouble maaaann. Enter a number >0.\n";
+		std::cout << "Enter a number >0.\n";
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits <std::streamsize>::max(), '\n');
 		if (std::cin >> this->numberFlight)

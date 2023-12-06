@@ -48,7 +48,7 @@ void MenuAeroflotPrint() {
 
 void MenuAeroflot() {
 
-	Storage* store = new Storage;
+	Keeper* k = new Keeper;
 	Aeroflot* aeroflot;
 	action = 1;
 
@@ -62,8 +62,8 @@ void MenuAeroflot() {
 
 			aeroflot = new Aeroflot;
 			aeroflot->setData();
-			store->addElement(aeroflot);
-			store->sortTimeDeparture();
+			k->addElement(aeroflot);
+			k->sortTimeDeparture();
 
 			system("pause");
 			system("cls");
@@ -72,17 +72,17 @@ void MenuAeroflot() {
 			system("cls");
 
 			try {
-				if (store->getCount() == 0) throw std::exception("Storage is empty\n");
+				if (k->getCount() == 0) throw std::exception("Storage is empty\n");
 				val = 0;
-				std::cout << "If you want to delete last Element(enter -> " << store->getCount() << ")\n";
+				std::cout << "If you want to delete last Element(enter -> " << k->getCount() << ")\n";
 
 				std::cout << "Index of Elemnt to delete: ";
 				std::cin >> val;
 
 				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
-				if (store->getCount() < val)  throw std::exception("This Element doesn't exist\n");
-				(*(store))[val].getData();
-				store->deleteElement(val);
+				if (k->getCount() < val)  throw std::exception("This Element doesn't exist\n");
+				(*(k))[val].getData();
+				k->deleteElement(val);
 			}
 			catch (const std::exception& ex) {
 				std::cout << ex.what() << '\n';
@@ -96,15 +96,15 @@ void MenuAeroflot() {
 			system("cls");
 
 			try {
-				if (store->getCount() == 0) throw std::exception("Storage is empty\n");
+				if (k->getCount() == 0) throw std::exception("Storage is empty\n");
 				val = 0;
 				std::cout << "Index of Elemnt to edit: ";
 				std::cin >> val;
 
 				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
-				if (store->getCount() < val)  throw std::exception("This Element doesn't exist\n");
-				(*(store))[val].getData();
-				store->editElement(val);
+				if (k->getCount() < val)  throw std::exception("This Element doesn't exist\n");
+				(*(k))[val].getData();
+				k->editElement(val);
 			}
 			catch (const std::exception& ex) {
 				std::cout << ex.what() << '\n';
@@ -116,7 +116,7 @@ void MenuAeroflot() {
 		case 4:
 			system("cls");
 
-			store->displayKeep();
+			k->displayKeep();
 
 			system("pause");
 			system("cls");
@@ -124,7 +124,7 @@ void MenuAeroflot() {
 		case 5:
 			system("cls");
 
-			store->displayByTypeAerocraft();
+			k->displayByTypeAerocraft();
 
 			system("pause");
 			system("cls");
@@ -139,7 +139,7 @@ void MenuAeroflot() {
 			break;
 		}
 	}
-	delete store;
+	delete k;
 }
 
 int main()
@@ -169,7 +169,7 @@ int main()
 		default:
 			system("cls");
 
-			std::cout << "Trouble maaaann. Select comand again.\n";
+			std::cout << "Comand again.\n";
 
 			system("pause");
 			system("cls");

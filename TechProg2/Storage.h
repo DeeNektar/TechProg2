@@ -11,7 +11,7 @@
 ● если таких поездов нет, выдать на дисплей соответствующее
 сообщение.*/
 
-class Storage {
+class Keeper {
 
 private:
 
@@ -153,7 +153,7 @@ public:
             std::string name = "";
             std::cout << "Required Type Aerocraft: ";
             while (!(std::cin >> name)) {
-                std::cout << "Trouble maaaann. Type Aerocraft: ";
+                std::cout << "Type Aerocraft: ";
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits <std::streamsize>::max(), '\n');
                 if (std::cin >> name)
@@ -165,15 +165,12 @@ public:
             int num = 0;
             for (int i = 1;i < getCount() + 1;i++) {
                 if ((*this)[i].getTypeAerocraft() == name) {
-                    std::cout << "-------Element " << num << "-------" << std::endl;
+                    std::cout << "Element #" << num << std::endl;
                     (*this)[i].getData();
                     num++;
                 }
             }
-            if (num != 0)
-                std::cout << "\nCount of Elements with Type Aerocraft = " << name << " :   " << num << std::endl << std::endl;
-
-            else
+            if (num == 0)
                 std::cout << "\nNo Elements with Type Aerocraft = " << name << std::endl << std::endl;
 
         }
@@ -188,11 +185,11 @@ public:
             if (getCount() == 0) throw std::exception("Storage is empty\n");
 
             for (int i = 1;i < getCount() + 1;i++) {                          //display from 1 to Count //slower
-                std::cout << "-------Element " << i << "-------" << std::endl;
+                std::cout << "Element #" << i << std::endl;
                 (*this)[i].getData();
             }
 
-            std::cout << "\nCount of Elements: " << getCount() << std::endl << std::endl;
+            //std::cout << "\nCount of Elements: " << getCount() << std::endl << std::endl;
         }
         catch (const std::exception& ex) {
 
@@ -201,7 +198,7 @@ public:
     }
 
     void editElement(const int index) {
-        std::cout << "\nChange Data\n";
+        std::cout << "\nData\n";
         (*this)[index].setData();
     }
 };
